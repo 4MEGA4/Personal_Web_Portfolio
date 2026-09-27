@@ -1,0 +1,251 @@
+@import "tailwindcss";
+
+/* 2. Sharp Corners Everywhere */
+*, *::before, *::after {
+  border-radius: 0px !important;
+}
+
+:root {
+  --bg-black: #000000;
+  --bg-dark: #121212;
+  --bg-surface: #262626;
+  --border-white: #ffffff;
+  --border-dark: #262626;
+  --text-white: #ffffff;
+  --text-muted: #a3a3a3;
+  --font-mono-tech: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+@theme {
+  --color-black: #000000;
+  --color-white: #ffffff;
+  --color-dark: #121212;
+  --color-surface: #262626;
+  --color-border: #ffffff;
+  --color-border-dark: #262626;
+  --font-serif: var(--font-serif), Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-sans: var(--font-geist-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: dark;
+  background-color: #000000;
+}
+
+body {
+  background-color: #000000;
+  color: #ffffff;
+  overflow-x: hidden;
+  font-family: var(--font-geist-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  selection-background-color: #ffffff;
+  selection-color: #000000;
+}
+
+::selection {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+/* 5. Textures: Film Grain & Halftone Pattern */
+.grain-overlay {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.06;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* Halftone dot pattern overlay */
+.halftone-overlay,
+.bg-halftone {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.15) 1px, transparent 1px);
+  background-size: 8px 8px;
+}
+
+/* Stark Brutalist Cockpit Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000000;
+  border-left: 1px solid #262626;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ffffff;
+  border: 1px solid #000000;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a3a3a3;
+}
+
+/* 3. Harsh Shadows & Thick Borders - Concrete Brutalist Panels */
+.hud-panel,
+.hud-panel-pink,
+.hud-panel-amber,
+.hud-panel-emerald,
+.brutalist-panel {
+  background-color: #121212;
+  border: 2px solid #ffffff;
+  box-shadow: 4px 4px 0px #ffffff;
+  position: relative;
+}
+
+.hud-panel:hover,
+.hud-panel-pink:hover,
+.hud-panel-amber:hover,
+.hud-panel-emerald:hover,
+.brutalist-panel:hover {
+  border-color: #ffffff;
+  box-shadow: 6px 6px 0px #ffffff;
+}
+
+.brutalist-card {
+  background-color: #121212;
+  border: 2px solid #ffffff;
+  box-shadow: 4px 4px 0px #ffffff;
+}
+
+.brutalist-card-dark {
+  background-color: #000000;
+  border: 2px solid #262626;
+  box-shadow: 4px 4px 0px #262626;
+}
+
+.brutalist-card-dark:hover {
+  border-color: #ffffff;
+  box-shadow: 4px 4px 0px #ffffff;
+}
+/* Short Generic Brutalist Utilities */
+.b-card {
+  border: 2px solid #ffffff;
+  background-color: #121212;
+  box-shadow: 4px 4px 0px #ffffff;
+}
+
+.b-card-dark {
+  border: 2px solid #ffffff;
+  background-color: #000000;
+  box-shadow: 4px 4px 0px #ffffff;
+}
+
+.b-btn {
+  border: 2px solid #ffffff;
+  padding: 0.5rem 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  box-shadow: 3px 3px 0px #ffffff;
+}
+
+.b-btn:hover {
+  box-shadow: 1px 1px 0px #ffffff;
+  transform: translate(1px, 1px);
+}
+
+.b-btn-white {
+  border: 2px solid #ffffff;
+  padding: 0.5rem 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  box-shadow: 3px 3px 0px #ffffff;
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.b-btn-white:hover {
+  background-color: #000000;
+  color: #ffffff;
+  box-shadow: 1px 1px 0px #ffffff;
+  transform: translate(1px, 1px);
+}
+
+.b-btn-dark {
+  border: 2px solid #ffffff;
+  padding: 0.5rem 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  box-shadow: 3px 3px 0px #ffffff;
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.b-btn-dark:hover {
+  background-color: #ffffff;
+  color: #000000;
+  box-shadow: 1px 1px 0px #ffffff;
+  transform: translate(1px, 1px);
+}
+
+.b-tag {
+  border: 1px solid #ffffff;
+  background-color: #000000;
+  padding: 0.125rem 0.5rem;
+  font-size: 0.75rem;
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+}
+
+
+/* Harsh Shadow Utilities */
+.shadow-brutal-white {
+  box-shadow: 4px 4px 0px #ffffff;
+}
+
+.shadow-brutal-white-sm {
+  box-shadow: 2px 2px 0px #ffffff;
+}
+
+.shadow-brutal-white-lg {
+  box-shadow: 6px 6px 0px #ffffff;
+}
+
+.shadow-brutal-black {
+  box-shadow: 4px 4px 0px #000000;
+}
+
+.shadow-brutal-black-sm {
+  box-shadow: 2px 2px 0px #000000;
+}
+
+/* Corner HUD Cutouts */
+.corner-cutout {
+  clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 14px 100%, 0 calc(100% - 14px));
+}
+
+.corner-cutout-sm {
+  clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 8px 100%, 0 calc(100% - 8px));
+}
+
+/* Subtle Aerospace Monochrome Grid Background Overlay */
+.bg-grid-tech {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+}
+
+/* Monochromatic Scanline Overlay Effect */
+.scanline-overlay {
+  background: linear-gradient(
+    rgba(255, 255, 255, 0) 50%, 
+    rgba(0, 0, 0, 0.4) 50%
+  );
+  background-size: 100% 4px;
+  pointer-events: none;
+}
+
+/* Mecha Monospace font helper */
+.font-tech {
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  letter-spacing: 0.05em;
+}
